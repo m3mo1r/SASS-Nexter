@@ -1,0 +1,44 @@
+.sidebar {
+  grid-row: 1 / -1;
+  grid-column: sidebar-start / sidebar-end;
+
+  display: flex;
+  justify-content: center;
+  background-color: $color-primary;
+
+  @media only screen and (max-width: $bp-large) {
+    grid-row: sidebar-start / sidebar-end;
+    grid-column: 1 / -1;
+
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+
+.btn-nav {
+  display: block;
+  width: 4.5rem;
+  height: 3px;
+  background-color: #fff;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  margin-top: 4rem;
+
+  @media only screen and (max-width: $bp-large) {
+    margin-top: 0;
+    margin-right: 4rem;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    width: 4.5rem;
+    height: 3px;
+    background-color: #fff;
+  }
+
+  &::before { transform: translateY(-1.5rem);}
+  &::after { transform: translateY(1.2rem);}
+}
